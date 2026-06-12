@@ -21,7 +21,7 @@ CONF_ONLINE_TIMEOUT_S = "online_timeout_s"
 CONF_NAME_MAP = "name_map"
 
 DEFAULT_UDP_PORT = 12414
-DEFAULT_ONLINE_TIMEOUT_S = 10
+DEFAULT_ONLINE_TIMEOUT_S = 30
 
 # How often the online/availability flag is recomputed.
 SCAN_INTERVAL_S = 2

@@ -60,6 +60,7 @@ class Am7pUdpListener(asyncio.DatagramProtocol):
         self.devices: dict[str, Am7pDevice] = {}
         self._transport: asyncio.BaseTransport | None = None
         self._cancel_interval = None
+        self._closed: asyncio.Future[None] = hass.loop.create_future()
 
     async def async_start(self) -> None:
         """Open the datagram endpoint and start the availability timer."""
@@ -75,15 +76,22 @@ class Am7pUdpListener(asyncio.DatagramProtocol):
         )
         _LOGGER.info("AM7P UDP listener started on port %s", self.udp_port)
 
-    @callback
-    def async_stop(self) -> None:
-        """Close the transport and cancel the timer."""
+    async def async_stop(self) -> None:
+        """Close the transport and wait until the socket is released."""
         if self._cancel_interval is not None:
             self._cancel_interval()
             self._cancel_interval = None
         if self._transport is not None:
             self._transport.close()
-            self._transport = None
+            try:
+                await asyncio.wait_for(self._closed, timeout=2)
+            except TimeoutError:
+                _LOGGER.warning(
+                    "Timed out while closing AM7P UDP listener on port %s",
+                    self.udp_port,
+                )
+            finally:
+                self._transport = None
         _LOGGER.info("AM7P UDP listener stopped")
 
     def _name_for(self, ip: str) -> str:
@@ -118,6 +126,13 @@ class Am7pUdpListener(asyncio.DatagramProtocol):
     def error_received(self, exc: Exception) -> None:
         """Log transport-level errors."""
         _LOGGER.debug("AM7P UDP error: %s", exc)
+
+    def connection_lost(self, exc: Exception | None) -> None:
+        """Mark the listener transport as closed."""
+        if exc is not None:
+            _LOGGER.debug("AM7P UDP listener connection lost: %s", exc)
+        if not self._closed.done():
+            self._closed.set_result(None)
 
     # --- periodic availability recompute ---
 

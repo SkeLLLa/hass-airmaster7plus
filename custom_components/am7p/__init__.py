@@ -49,7 +49,7 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
     if unload_ok:
         listener: Am7pUdpListener = entry.runtime_data
-        listener.async_stop()
+        await listener.async_stop()
     return unload_ok
 
 
