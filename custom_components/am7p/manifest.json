@@ -1,13 +1,13 @@
 {
   "domain": "am7p",
   "name": "AirMaster 7 Plus",
-  "version": "0.0.0",
+  "codeowners": ["@SkeLLLa"],
   "config_flow": true,
-  "documentation": "https://github.com/SkeLLLa/hass-airmaster7plus",
-  "issue_tracker": "https://github.com/SkeLLLa/hass-airmaster7plus/issues",
-  "iot_class": "local_push",
-  "integration_type": "hub",
   "dependencies": [],
+  "documentation": "https://github.com/SkeLLLa/hass-airmaster7plus",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/SkeLLLa/hass-airmaster7plus/issues",
   "requirements": [],
-  "codeowners": ["@SkeLLLa"]
+  "version": "0.0.0"
 }

@@ -1,6 +1,5 @@
 {
   "config": {
-    "single_instance_allowed": "Вже налаштовано. Підтримується лише один екземпляр AirMaster 7 Plus.",
     "step": {
       "user": {
         "title": "AirMaster 7 Plus",
@@ -10,6 +9,9 @@
           "online_timeout_s": "Тайм-аут онлайн-стану (секунди)"
         }
       }
+    },
+    "abort": {
+      "already_configured": "Вже налаштовано. Підтримується лише один екземпляр AirMaster 7 Plus."
     },
     "error": {
       "port_unavailable": "Не вдалося прив'язати UDP-порт. Можливо, він уже використовується іншою службою."
