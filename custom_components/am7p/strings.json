@@ -1,0 +1,43 @@
+{
+  "config": {
+    "single_instance_allowed": "Already configured. Only one AirMaster 7 Plus instance is supported.",
+    "step": {
+      "user": {
+        "title": "AirMaster 7 Plus",
+        "description": "Configure the UDP listener. Devices are auto-discovered by source IP on their first packet.",
+        "data": {
+          "udp_port": "UDP port",
+          "online_timeout_s": "Online timeout (seconds)"
+        }
+      }
+    },
+    "error": {
+      "port_unavailable": "Could not bind the UDP port. It may be in use by another service."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "AirMaster 7 Plus options",
+        "data": {
+          "online_timeout_s": "Online timeout (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pm25": { "name": "PM2.5" },
+      "pm10": { "name": "PM10" },
+      "hcho": { "name": "HCHO" },
+      "tvoc": { "name": "TVOC" },
+      "co2": { "name": "CO2" },
+      "temperature": { "name": "Temperature" },
+      "humidity": { "name": "Humidity" },
+      "last_packet": { "name": "Last updated" }
+    },
+    "binary_sensor": {
+      "online": { "name": "Online" }
+    }
+  }
+}

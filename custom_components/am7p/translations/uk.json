@@ -1,0 +1,43 @@
+{
+  "config": {
+    "single_instance_allowed": "Вже налаштовано. Підтримується лише один екземпляр AirMaster 7 Plus.",
+    "step": {
+      "user": {
+        "title": "AirMaster 7 Plus",
+        "description": "Налаштуйте прослуховувач UDP. Пристрої автоматично виявляються за IP-адресою джерела після отримання першого пакета.",
+        "data": {
+          "udp_port": "UDP-порт",
+          "online_timeout_s": "Тайм-аут онлайн-стану (секунди)"
+        }
+      }
+    },
+    "error": {
+      "port_unavailable": "Не вдалося прив'язати UDP-порт. Можливо, він уже використовується іншою службою."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметри AirMaster 7 Plus",
+        "data": {
+          "online_timeout_s": "Тайм-аут онлайн-стану (секунди)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "pm25": { "name": "PM2.5" },
+      "pm10": { "name": "PM10" },
+      "hcho": { "name": "HCHO" },
+      "tvoc": { "name": "TVOC" },
+      "co2": { "name": "CO2" },
+      "temperature": { "name": "Температура" },
+      "humidity": { "name": "Вологість" },
+      "last_packet": { "name": "Останнє оновлення" }
+    },
+    "binary_sensor": {
+      "online": { "name": "Онлайн" }
+    }
+  }
+}

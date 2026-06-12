@@ -1,0 +1,18 @@
+[tool.semantic_release]
+# Bump the HA integration manifest version from conventional commits.
+version_variables = ["custom_components/am7p/manifest.json:version"]
+build_command = ""
+commit_message = "chore(release): {version} [skip ci]"
+tag_format = "v{version}"
+major_on_zero = false
+allow_zero_version = true
+
+[tool.semantic_release.branches.main]
+match = "(master|main)"
+
+[tool.semantic_release.changelog]
+exclude_commit_patterns = ["chore\\(release\\):.*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
