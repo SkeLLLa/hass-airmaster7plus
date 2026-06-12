@@ -15,16 +15,16 @@ Based on earlier AirMaster community work.
 
 ## Sensors
 
-| Entity | Device class | Unit |
-|---|---|---|
-| PM2.5 | pm25 | µg/m³ |
-| PM10 | pm10 | µg/m³ |
-| HCHO | volatile_organic_compounds | mg/m³ |
-| TVOC | volatile_organic_compounds | mg/m³ |
-| CO₂ | carbon_dioxide | ppm |
-| Temperature | temperature | °C |
-| Humidity | humidity | % |
-| Online | connectivity (binary_sensor) | — |
+| Entity      | Device class                 | Unit  |
+| ----------- | ---------------------------- | ----- |
+| PM2.5       | pm25                         | µg/m³ |
+| PM10        | pm10                         | µg/m³ |
+| HCHO        | volatile_organic_compounds   | mg/m³ |
+| TVOC        | volatile_organic_compounds   | mg/m³ |
+| CO₂         | carbon_dioxide               | ppm   |
+| Temperature | temperature                  | °C    |
+| Humidity    | humidity                     | %     |
+| Online      | connectivity (binary_sensor) | —     |
 
 The integration also exposes a disabled-by-default diagnostic sensor for the
 timestamp of the last update received from the device.
@@ -58,11 +58,6 @@ https://github.com/SkeLLLa/hass-airmaster7plus
 
 - AM7P configured to send UDP to your HA host's network (see AirMasterConnect for Wi-Fi setup).
 - Static IP / DHCP reservation for the device recommended — a changed IP is treated as a new device.
-
-## Development
-
-See `.tmp/INTEGRATION_PLAN.md` for the build plan and the reference Python scripts
-(`am7p_bridge.py`, `am7p_monitor.py`, `am7p_publish.py`) the integration is derived from.
 
 ## Credits
 
