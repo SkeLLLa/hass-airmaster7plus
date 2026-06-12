@@ -31,11 +31,28 @@ timestamp of the last update received from the device.
 
 ## Installation (HACS)
 
-1. HACS → Integrations → ⋮ → Custom repositories.
-2. Add this repo URL, category **Integration**.
-3. Install **AirMaster 7 Plus**, restart Home Assistant.
-4. Settings → Devices & Services → Add Integration → **AirMaster 7 Plus**.
-5. Set the UDP port (default `12414`). Devices appear on first received packet.
+### Add this repo manually to HACS
+
+1. Open HACS in Home Assistant.
+2. Go to `Integrations`.
+3. Open the top-right menu (`⋮`) and select `Custom repositories`.
+4. In `Repository`, paste this repo URL:
+
+```text
+https://github.com/SkeLLLa/hass-airmaster7plus
+```
+
+5. In `Category`, select `Integration`.
+6. Click `Add`.
+
+### Install the integration
+
+1. Find `AirMaster 7 Plus` in HACS Integrations.
+2. Click `Download`.
+3. Restart Home Assistant.
+4. Go to `Settings` → `Devices & Services`.
+5. Click `Add Integration` and select `AirMaster 7 Plus`.
+6. Set the UDP port (default `12414`). Devices appear on first received packet.
 
 ## Requirements
 
