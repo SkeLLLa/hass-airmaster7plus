@@ -1,5 +1,10 @@
 # AirMaster 7 Plus — Home Assistant Integration
 
+[![GitHub Release](https://img.shields.io/github/v/release/SkeLLLa/hass-airmaster7plus?style=flat-square)](https://github.com/SkeLLLa/hass-airmaster7plus/releases)
+[![License](https://img.shields.io/github/license/SkeLLLa/hass-airmaster7plus?style=flat-square)](LICENSE)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=flat-square)](https://github.com/hacs/integration)
+[![CI](https://img.shields.io/github/actions/workflow/status/SkeLLLa/hass-airmaster7plus/validate.yml?branch=master&style=flat-square&label=CI)](https://github.com/SkeLLLa/hass-airmaster7plus/actions/workflows/validate.yml)
+
 Native Home Assistant integration for the **AirMaster 7 Plus (AM7P)** air quality monitor.
 
 Listens for the device's UDP broadcasts on the local network and exposes its readings
